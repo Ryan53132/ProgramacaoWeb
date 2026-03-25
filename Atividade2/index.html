@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Lista de tarefas</title>
+</head>
+<body>
+    <header class="grid grid-cols-2 p-3">
+        <div>
+            <h5>Tarefas</h5>
+        </div>
+        <div class="text-end">
+            <button class="mx-3" onclick="chamaCriarTarefa()">Criar tarefa</button>
+            <button class="mx-3" onclick="TabeladosDias()">Visualizar tarefa</button>
+        </div>
+    </header>
+    <div id="TabelaDias">
+
+    </div>
+    <script src="scrip.js"></script>
+</body>
+</html>
