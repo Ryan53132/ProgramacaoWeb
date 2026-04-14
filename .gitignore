@@ -1,0 +1,11 @@
+# Dependências
+node_modules/
+
+# Arquivos de log (opcional, mas recomendado)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Pasta de compilação (se você usa TypeScript/Builds)
+dist/
+out/
