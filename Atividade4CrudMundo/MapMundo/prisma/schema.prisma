@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  password  String
+}
+
+model Continente {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  descricao String
+  paises Pais[] 
+}
+
+model Pais {
+  id           Int        @id @default(autoincrement())
+  nome         String
+  população    String
+  idioma       String
+  moeda        String
+  contid       Int
+  continenteFK Continente @relation(fields: [contid], references: [id],onDelete: Cascade)
+  cidades      Cidade[]  
+}
+
+model Cidade {
+  id     Int    @id @default(autoincrement())
+  nome   String
+  população   String
+  latitude    String
+  longitude   String
+  paisid Int
+  paisFK Pais   @relation(fields: [paisid], references: [id],onDelete: Cascade) 
+}
